@@ -1,0 +1,37 @@
+{
+  "name": "multiline",
+  "version": "0.0.0",
+  "description": "Multiline strings in JavaScript",
+  "license": "MIT",
+  "main": "multiline.js",
+  "repository": "sindresorhus/multiline",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "multiline.js"
+  ],
+  "keywords": [
+    "multiline",
+    "multi-line",
+    "multiple",
+    "line",
+    "comment",
+    "string",
+    "str",
+    "text",
+    "comment"
+  ],
+  "devDependencies": {
+    "mocha": "*",
+    "callsite": "^1.0.0"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "multiline",
+  "version": "0.0.0",
+  "description": "Multiline strings in JavaScript",
+  "license": "MIT",
+  "main": "multiline.js",
+  "repo": "sindresorhus/multiline",
+  "scripts": ["multiline.js"],
+  "keywords": [
+    "multiline",
+    "multi-line",
+    "multiple",
+    "line",
+    "comment",
+    "string",
+    "str",
+    "text",
+    "comment"
+  ]
+}
