@@ -14,3 +14,27 @@ it('should support multiline comments', function () {
 	var expected = '<!doctype html>\n<html>\n\t<body>\n\t\t<h1>Hello world!</h1>\n\t</body>\n</html>';
 	assert.equal(actual, expected);
 });
+
+it('should match when comment starts with `/*!`', function () {
+	var actual = ml(function(){/*!
+foo
+	*/});
+	var expected = 'foo';
+	assert.equal(actual, expected);
+});
+
+it('should match when comment starts with `/*@preserve`', function () {
+	var actual = ml(function(){/*@preserve
+foo
+	*/});
+	var expected = 'foo';
+	assert.equal(actual, expected);
+});
+
+it('should match when comment starts with `/*!@preserve`', function () {
+	var actual = ml(function(){/*!@preserve
+foo
+	*/});
+	var expected = 'foo';
+	assert.equal(actual, expected);
+});

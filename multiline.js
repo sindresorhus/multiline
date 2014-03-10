@@ -8,9 +8,9 @@
 (function () {
 	'use strict';
 
-	// start matching after: comment start block => optional whitespace => newline
+	// start matching after: comment start block => ! or @preserve => optional whitespace => newline
 	// stop matching before: last newline => optional whitespace => comment end block
-	var reCommentContents = /\/\*\s*(?:\r\n|\n)([\s\S]*?)(?:\r\n|\n)\s*\*\//;
+	var reCommentContents = /\/\*!?(?:\@preserve)?\s*(?:\r\n|\n)([\s\S]*?)(?:\r\n|\n)\s*\*\//;
 
 	var multiline = function (fn) {
 		if (typeof fn !== 'function') {

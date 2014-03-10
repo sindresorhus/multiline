@@ -42,36 +42,8 @@ Even though it's [slower than string concat](http://jsperf.com/multiline), that 
 
 ## Install
 
-#### [npm](https://npmjs.org/package/multiline)
-
-```
-npm install --save multiline
-```
-
-### Browser
-
-#### Compatibility
-
-- Latest Chrome
-- Firefox >=17
-- Safari >=4
-- Opera >=9
-- Internet Explorer >=6
-
-Make sure to use `/*!` instead of `/*` when minifying to prevent the comments from being stripped.
-
-Download [manually](https://github.com/sindresorhus/multiline/releases) or with a package-manager.
-
-#### [Bower](http://bower.io)
-
-```
-bower install --save multiline
-```
-
-#### [Component](https://github.com/component/component)
-
-```
-component install sindresorhus/multiline
+```bash
+$ npm install --save multiline
 ```
 
 
@@ -104,6 +76,56 @@ Which outputs:
 ```
 
 And a [real-world use-case](https://github.com/sindresorhus/pageres/blob/cb85922dec2b962c7b45484023c9ba43a9abf6bd/cli.js#L14-L33).
+
+
+## Browser
+
+### Compatibility
+
+- Latest Chrome
+- Firefox >=17
+- Safari >=4
+- Opera >=9
+- Internet Explorer >=6
+
+### Minification
+
+Even though minifiers strip comments by default there are ways to preserve them:
+
+- Uglify: Use `/*@preserve` instead of `/*` and enable the `comments` option
+- Closure Compiler: Use `/*@preserve` instead of `/*`
+- YUI Compressor: Use `/*!` instead of `/*`
+
+You also need to add `0` after the comment so it's not removed as dead-code.
+
+The final result would be:
+
+```js
+var str = multiline(function(){/*!@preserve
+<!doctype html>
+<html>
+	<body>
+		<h1>❤ unicorns</h1>
+	</body>
+</html>
+*/0});
+```
+
+### Install
+
+Download [manually](https://github.com/sindresorhus/multiline/releases) or with a package-manager.
+
+#### [Bower](http://bower.io)
+
+```
+bower install --save multiline
+```
+
+#### [Component](https://github.com/component/component)
+
+```
+component install sindresorhus/multiline
+```
 
 
 ## Experiment
