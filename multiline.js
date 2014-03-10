@@ -17,7 +17,13 @@
 			throw new TypeError('Expected a function.');
 		}
 
-		return reCommentContents.exec(fn.toString())[1];
+		var match = reCommentContents.exec(fn.toString());
+
+		if (!match) {
+			throw new TypeError('Multiline comment missing.');
+		}
+
+		return match[1];
 	};
 
 	if (typeof module !== 'undefined' && module.exports) {

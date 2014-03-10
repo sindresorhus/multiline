@@ -38,3 +38,13 @@ foo
 	var expected = 'foo';
 	assert.equal(actual, expected);
 });
+
+it('should throw if it can\'t match comment contents', function () {
+	assert.throws(function () {
+		ml(function(){});
+	});
+
+	assert.throws(function () {
+		ml(function(){/**/});
+	});
+});
