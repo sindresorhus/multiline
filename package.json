@@ -31,6 +31,9 @@
     "text",
     "comment"
   ],
+  "dependencies": {
+    "strip-indent": "^0.1.0"
+  },
   "devDependencies": {
     "mocha": "*",
     "browserify": "^3.0.0",

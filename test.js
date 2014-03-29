@@ -48,3 +48,19 @@ it('should throw if it can\'t match comment contents', function () {
 		ml(function(){/**/});
 	});
 });
+
+describe('multiline.stripIndent()', function () {
+	it('should strip redundant leading whitespace', function () {
+		var actual = ml.stripIndent(function(){/*
+			<!doctype html>
+			<html>
+
+				<body>
+					<h1>Hello world!</h1>
+				</body>
+			</html>
+		*/});
+		var expected = '<!doctype html>\n<html>\n\n\t<body>\n\t\t<h1>Hello world!</h1>\n\t</body>\n</html>';
+		assert.equal(actual, expected);
+	});
+});

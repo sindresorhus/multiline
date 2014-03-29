@@ -60,8 +60,6 @@ var str = multiline(function(){/*
 	</body>
 </html>
 */});
-
-console.log(str);
 ```
 
 Which outputs:
@@ -75,20 +73,37 @@ Which outputs:
 </html>
 ```
 
-And a [real-world use-case](https://github.com/sindresorhus/pageres/blob/cb85922dec2b962c7b45484023c9ba43a9abf6bd/cli.js#L14-L33).
+### Strip indent
 
+You can use `multiline.stripIndent()` to be able to indent your multiline string without preserving the redundant leading whitespace.
 
-### Install
-
-Download [manually](https://github.com/sindresorhus/multiline/releases) or with a package-manager.
-
-```bash
-$ bower install --save multiline
+```js
+	var str = multiline.stripIndent(function(){/*
+			<!doctype html>
+			<html>
+				<body>
+					<h1>❤ unicorns</h1>
+				</body>
+			</html>
+	*/});
 ```
 
-```bash
-$ component install sindresorhus/multiline
+Which outputs:
+
 ```
+<!doctype html>
+<html>
+	<body>
+		<h1>❤ unicorns</h1>
+	</body>
+</html>
+```
+
+## Use cases
+
+A real-world [use case](https://github.com/sindresorhus/pageres/blob/cb85922dec2b962c7b45484023c9ba43a9abf6bd/cli.js#L14-L33) from my `pageres` module.
+
+Have one? Let me know.
 
 
 ## Experiment
@@ -140,6 +155,18 @@ var str = 'foo\n' +
 ## Browser
 
 While it does work fine in the browser, it's mainly intended for use in Node.js.
+
+### Install
+
+Download [manually](https://github.com/sindresorhus/multiline/releases) or with a package-manager.
+
+```bash
+$ bower install --save multiline
+```
+
+```bash
+$ component install sindresorhus/multiline
+```
 
 ### Compatibility
 
