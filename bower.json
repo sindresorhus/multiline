@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "Multiline strings in JavaScript",
   "license": "MIT",
-  "main": "multiline.js",
+  "main": "browser.js",
   "authors": [{
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
@@ -25,6 +25,7 @@
     "component.json",
     "package.json",
     "test.js",
+    "index.js",
     "experiment.js",
     "experiment_test.js"
   ]

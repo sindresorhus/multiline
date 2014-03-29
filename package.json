@@ -3,7 +3,6 @@
   "version": "0.2.0",
   "description": "Multiline strings in JavaScript",
   "license": "MIT",
-  "main": "multiline.js",
   "repository": "sindresorhus/multiline",
   "author": {
     "name": "Sindre Sorhus",
@@ -14,12 +13,14 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "browser": "a=$npm_package_name; browserify -r ./index:$a -s $a index.js -o browser.js"
   },
   "files": [
-    "multiline.js"
+    "index.js"
   ],
   "keywords": [
+    "browser",
     "multiline",
     "multi-line",
     "multiple",
@@ -32,6 +33,7 @@
   ],
   "devDependencies": {
     "mocha": "*",
+    "browserify": "^3.0.0",
     "callsite": "^1.0.0"
   }
 }

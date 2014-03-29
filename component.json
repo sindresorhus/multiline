@@ -3,9 +3,10 @@
   "version": "0.2.0",
   "description": "Multiline strings in JavaScript",
   "license": "MIT",
-  "main": "multiline.js",
   "repo": "sindresorhus/multiline",
-  "scripts": ["multiline.js"],
+  "scripts": [
+    "index.js"
+  ],
   "keywords": [
     "multiline",
     "multi-line",

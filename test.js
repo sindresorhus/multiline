@@ -1,6 +1,6 @@
 'use strict';
 var assert = require('assert');
-var ml = require('./multiline');
+var ml = require('./index');
 
 it('should support multiline comments', function () {
 	var actual = ml(function(){/*
