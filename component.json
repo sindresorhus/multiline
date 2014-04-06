@@ -1,6 +1,6 @@
 {
   "name": "multiline",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Multiline strings in JavaScript",
   "license": "MIT",
   "repo": "sindresorhus/multiline",
