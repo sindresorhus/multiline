@@ -39,6 +39,16 @@ foo
 	assert.equal(actual, expected);
 });
 
+it('should preserve leading empty lines', function () {
+	var actual = ml(function(){/*
+
+
+foo
+	*/});
+	var expected = '\n\nfoo';
+	assert.equal(actual, expected);
+});
+
 it('should throw if it can\'t match comment contents', function () {
 	assert.throws(function () {
 		ml(function(){});

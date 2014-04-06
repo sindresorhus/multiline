@@ -3,7 +3,7 @@ var stripIndent = require('strip-indent');
 
 // start matching after: comment start block => ! or @preserve => optional whitespace => newline
 // stop matching before: last newline => optional whitespace => comment end block
-var reCommentContents = /\/\*!?(?:\@preserve)?\s*(?:\r\n|\n)([\s\S]*?)(?:\r\n|\n)\s*\*\//;
+var reCommentContents = /\/\*!?(?:\@preserve)?(?:\r\n|\n)([\s\S]*?)(?:\r\n|\n)\s*\*\//;
 
 var multiline = module.exports = function (fn) {
 	if (typeof fn !== 'function') {
