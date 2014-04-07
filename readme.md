@@ -103,6 +103,8 @@ Which outputs:
 
 A real-world [use case](https://github.com/sindresorhus/pageres/blob/cb85922dec2b962c7b45484023c9ba43a9abf6bd/cli.js#L14-L33) from my `pageres` module.
 
+Another use case is for query strings.  Here's [an example in Cypher](https://github.com/freethejazz/twitter-to-neo4j/blob/master/cypher/queries.js), the query language for Neo4j.
+
 Have one? Let me know.
 
 
