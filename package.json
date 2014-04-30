@@ -1,6 +1,6 @@
 {
   "name": "multiline",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Multiline strings in JavaScript",
   "license": "MIT",
   "repository": "sindresorhus/multiline",
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "browser": "a=$npm_package_name; browserify -r ./index:$a -s $a index.js -o browser.js"
+    "browser": "browserify -s $npm_package_name -o browser.js ."
   },
   "files": [
     "index.js",
@@ -38,6 +38,6 @@
   "devDependencies": {
     "mocha": "*",
     "browserify": "^3.0.0",
-    "callsite": "^1.0.0"
+    "callsites": "^0.2.0"
   }
 }

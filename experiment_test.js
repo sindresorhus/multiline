@@ -11,6 +11,6 @@ it('should support multiline comment directly as argument', function () {
 	</body>
 </html>
 	*/);
-	var expected = '\n<!doctype html>\n<html>\n\t<body>\n\t\t<h1>Hello world!</h1>\n\t</body>\n</html>\n\t\t'
+	var expected = '\n<!doctype html>\n<html>\n\t<body>\n\t\t<h1>Hello world!</h1>\n\t</body>\n</html>\n\t'
 	assert.equal(actual, expected);
 });

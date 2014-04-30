@@ -1,6 +1,6 @@
 'use strict';
 var EOL = require('os').EOL;
-var stack = require('callsite');
+var stack = require('callsites');
 var reCommentContents = /\/\*([\s\S]*?)\*\//;
 // Node wraps modules in a function so we can't use the native .isToplevel() method
 var reTopLevel = /function \(exports, require/;

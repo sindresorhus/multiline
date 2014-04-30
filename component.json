@@ -1,9 +1,9 @@
 {
   "name": "multiline",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Multiline strings in JavaScript",
   "license": "MIT",
-  "repo": "sindresorhus/multiline",
+  "repository": "sindresorhus/multiline",
   "scripts": [
     "index.js"
   ],
@@ -17,5 +17,8 @@
     "str",
     "text",
     "comment"
-  ]
+  ],
+  "dependencies": {
+    "sindresorhus/strip-indent": "^0.1.0"
+  }
 }
