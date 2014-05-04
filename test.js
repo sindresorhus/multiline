@@ -59,6 +59,20 @@ it('should throw if it can\'t match comment contents', function () {
 	});
 });
 
+it('should be preserved when using Uglify', function () {
+	var uglify = require('uglify-js');
+	var fixture = 'var str=multiline(function(){/*!@preserve\n<!doctype html>\n*/\nconsole.log});';
+
+	var actual = uglify.minify(fixture, {
+		fromString: true,
+		output: {
+			comments: true
+		}
+	}).code;
+
+	assert.equal(actual, fixture);
+});
+
 describe('multiline.stripIndent()', function () {
 	it('should strip redundant leading whitespace', function () {
 		var actual = ml.stripIndent(function(){/*

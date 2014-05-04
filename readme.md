@@ -156,17 +156,15 @@ var str = 'foo\n' +
 
 ## Browser
 
-While it does work fine in the browser, it's mainly intended for use in Node.js.
+While it does work fine in the browser, it's mainly intended for use in Node.js. Use at your own risk.
 
 ### Install
 
-Download [manually](https://github.com/sindresorhus/multiline/releases) or with a package-manager.
-
-```bash
+```sh
 $ bower install --save multiline
 ```
 
-```bash
+```sh
 $ component install sindresorhus/multiline
 ```
 
@@ -186,7 +184,7 @@ Even though minifiers strip comments by default there are ways to preserve them:
 - Closure Compiler: Use `/*@preserve` instead of `/*`
 - YUI Compressor: Use `/*!` instead of `/*`
 
-You also need to add `0` after the comment so it's not removed as dead-code.
+You also need to add `console.log` after the comment so it's not removed as dead-code.
 
 The final result would be:
 
@@ -198,10 +196,10 @@ var str = multiline(function(){/*!@preserve
 		<h1>❤ unicorns</h1>
 	</body>
 </html>
-*/0});
+*/console.log});
 ```
 
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)

@@ -3,11 +3,13 @@
   "description": "Multiline strings in JavaScript",
   "license": "MIT",
   "main": "browser.js",
-  "authors": [{
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
-  }],
+  "authors": [
+    {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "http://sindresorhus.com"
+    }
+  ],
   "keywords": [
     "multiline",
     "multi-line",

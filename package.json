@@ -36,8 +36,9 @@
     "strip-indent": "^0.1.0"
   },
   "devDependencies": {
-    "mocha": "*",
     "browserify": "^3.0.0",
-    "callsites": "^0.2.0"
+    "callsites": "^0.2.0",
+    "mocha": "*",
+    "uglify-js": "^2.4.13"
   }
 }
