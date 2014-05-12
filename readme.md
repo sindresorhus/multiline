@@ -101,9 +101,9 @@ Which outputs:
 
 ## Use cases
 
-A real-world [use case](https://github.com/sindresorhus/pageres/blob/cb85922dec2b962c7b45484023c9ba43a9abf6bd/cli.js#L14-L33) from my `pageres` module.
-
-Another use case is for query strings.  Here's [an example in Cypher](https://github.com/freethejazz/twitter-to-neo4j/blob/master/cypher/queries.js), the query language for Neo4j.
+- [CLI help output](https://github.com/sindresorhus/pageres/blob/cb85922dec2b962c7b45484023c9ba43a9abf6bd/cli.js#L14-L33)
+- [Test fixtures](https://twitter.com/TooTallNate/status/465392558000984064)
+- [Queries](https://github.com/freethejazz/twitter-to-neo4j/blob/a41b6c2e8480d4b9943640a8aa4b6976f07083bf/cypher/queries.js#L15-L22) - *here an example in Cypher, the query language for Neo4j*
 
 Have one? Let me know.
 
