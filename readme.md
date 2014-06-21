@@ -99,6 +99,22 @@ Which outputs:
 </html>
 ```
 
+
+### String substitution
+
+`console.log()` supports [string substitution](http://nodejs.org/docs/latest/api/console.html#console_console_log_data):
+
+```js
+var str = 'unicorns';
+
+console.log(multiline(function(){/*
+  I love %s
+*/}), str);
+
+//=> I love unicorns
+```
+
+
 ## Use cases
 
 - [CLI help output](https://github.com/sindresorhus/pageres/blob/cb85922dec2b962c7b45484023c9ba43a9abf6bd/cli.js#L14-L33)
