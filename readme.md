@@ -42,7 +42,7 @@ Even though it's [slower than string concat](http://jsperf.com/multiline), that 
 
 ## Install
 
-```bash
+```sh
 $ npm install --save multiline
 ```
 
@@ -122,7 +122,7 @@ console.log(multiline(function(){/*
 - [Queries](https://github.com/freethejazz/twitter-to-neo4j/blob/a41b6c2e8480d4b9943640a8aa4b6976f07083bf/cypher/queries.js#L15-L22) - *here an example in Cypher, the query language for Neo4j*
 - [CLI welcome message](https://github.com/yeoman/generator-jquery/blob/4b532843663e4b5ce7d433d351e0a78dcf2b1e20/app/index.js#L28-L40) - *here in a Yeoman generator*
 
-Have one? Let me know.
+Have one? [Let me know.](https://github.com/sindresorhus/multiline/issues/new)
 
 
 ## Experiment
@@ -176,6 +176,12 @@ var str = 'foo\n' +
 While it does work fine in the browser, it's mainly intended for use in Node.js. Use at your own risk.
 
 ### Install
+
+```sh
+$ npm install --save multiline
+```
+
+*(with [Browserify](http://browserify.org))*
 
 ```sh
 $ bower install --save multiline

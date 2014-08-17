@@ -33,11 +33,11 @@
     "comment"
   ],
   "dependencies": {
-    "strip-indent": "^0.1.0"
+    "strip-indent": "^1.0.0"
   },
   "devDependencies": {
-    "browserify": "^3.0.0",
-    "callsites": "^0.2.0",
+    "browserify": "^5.10.0",
+    "callsites": "^1.0.0",
     "mocha": "*",
     "uglify-js": "^2.4.13"
   }

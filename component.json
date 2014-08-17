@@ -19,6 +19,6 @@
     "comment"
   ],
   "dependencies": {
-    "sindresorhus/strip-indent": "^0.1.0"
+    "sindresorhus/strip-indent": "^1.0.0"
   }
 }
