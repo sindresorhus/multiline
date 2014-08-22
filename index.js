@@ -7,7 +7,7 @@ var reCommentContents = /\/\*!?(?:\@preserve)?[ \t]*(?:\r\n|\n)([\s\S]*?)(?:\r\n
 
 var multiline = module.exports = function (fn) {
 	if (typeof fn !== 'function') {
-		throw new TypeError('Expected a function.');
+		throw new TypeError('Expected a function');
 	}
 
 	var match = reCommentContents.exec(fn.toString());
