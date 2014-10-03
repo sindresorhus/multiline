@@ -187,9 +187,6 @@ $ npm install --save multiline
 $ bower install --save multiline
 ```
 
-```sh
-$ component install sindresorhus/multiline
-```
 
 ### Compatibility
 

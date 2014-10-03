@@ -23,7 +23,6 @@
   ],
   "ignore": [
     ".*",
-    "component.json",
     "package.json",
     "test.js",
     "index.js",
