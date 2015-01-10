@@ -49,6 +49,16 @@ foo
 	assert.equal(actual, expected);
 });
 
+it('should preserve trailing empty lines', function () {
+	var actual = ml(function(){/*
+foo
+
+
+	*/});
+	var expected = 'foo\n\n';
+	assert.equal(actual, expected);
+});
+
 it('should throw if it can\'t match comment contents', function () {
 	assert.throws(function () {
 		ml(function(){});
@@ -85,6 +95,26 @@ describe('multiline.stripIndent()', function () {
 			</html>
 		*/});
 		var expected = '<!doctype html>\n<html>\n\n\t<body>\n\t\t<h1>Hello world!</h1>\n\t</body>\n</html>';
+		assert.equal(actual, expected);
+	});
+
+	it('should preserve leading empty lines', function () {
+		var actual = ml.stripIndent(function(){/*
+
+
+			foo
+		*/});
+		var expected = '\n\nfoo';
+		assert.equal(actual, expected);
+	});
+
+	it('should preserve trailing empty lines', function () {
+		var actual = ml.stripIndent(function(){/*
+			foo
+
+
+		*/});
+		var expected = 'foo\n\n';
 		assert.equal(actual, expected);
 	});
 });
