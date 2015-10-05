@@ -9,7 +9,7 @@ No more string concatenation or array join!
 #### Before
 
 ```js
-var str = '' +
+const str = '' +
 '<!doctype html>' +
 '<html>' +
 '	<body>' +
@@ -22,7 +22,7 @@ var str = '' +
 #### After
 
 ```js
-var str = multiline(function(){/*
+const str = multiline(function(){/*
 <!doctype html>
 <html>
 	<body>
@@ -42,7 +42,7 @@ Even though it's [slower than string concat](http://jsperf.com/multiline), that 
 
 ## Install
 
-```sh
+```
 $ npm install --save multiline
 ```
 
@@ -52,7 +52,7 @@ $ npm install --save multiline
 Everything after the first newline and before the last will be returned as seen below:
 
 ```js
-var str = multiline(function(){/*
+const str = multiline(function(){/*
 <!doctype html>
 <html>
 	<body>
@@ -78,7 +78,7 @@ Which outputs:
 You can use `multiline.stripIndent()` to be able to indent your multiline string without preserving the redundant leading whitespace.
 
 ```js
-	var str = multiline.stripIndent(function(){/*
+	const str = multiline.stripIndent(function(){/*
 			<!doctype html>
 			<html>
 				<body>
@@ -105,13 +105,13 @@ Which outputs:
 `console.log()` supports [string substitution](http://nodejs.org/docs/latest/api/console.html#console_console_log_data):
 
 ```js
-var str = 'unicorns';
+const str = 'unicorns';
 
 console.log(multiline(function(){/*
   I love %s
 */}), str);
 
-//=> I love unicorns
+//=> 'I love unicorns'
 ```
 
 
@@ -132,7 +132,7 @@ I've also done an [experiment](experiment.js) where you don't need the anonymous
 It generates a callstack and extracts the contents of the comment in the function call.
 
 ```js
-var str = multiline(/*
+const str = multiline(/*
 <!doctype html>
 <html>
 	<body>
@@ -148,7 +148,7 @@ var str = multiline(/*
 ### But JS already has multiline strings with `\`?
 
 ```js
-var str = 'foo\
+const str = 'foo\
 bar';
 ```
 
@@ -157,14 +157,14 @@ This is not a multiline string. It's line-continuation. It doesn't preserve newl
 You would need to do the following:
 
 ```js
-var str = 'foo\n\
+const str = 'foo\n\
 bar';
 ```
 
 But then you could just as well concatenate:
 
 ```js
-var str = 'foo\n' +
+const str = 'foo\n' +
 'bar';
 ```
 
@@ -177,13 +177,13 @@ While it does work fine in the browser, it's mainly intended for use in Node.js.
 
 ### Install
 
-```sh
+```
 $ npm install --save multiline
 ```
 
 *(with [Browserify](http://browserify.org))*
 
-```sh
+```
 $ bower install --save multiline
 ```
 
@@ -209,7 +209,7 @@ You also need to add `console.log` after the comment so it's not removed as dead
 The final result would be:
 
 ```js
-var str = multiline(function(){/*!@preserve
+const str = multiline(function(){/*!@preserve
 <!doctype html>
 <html>
 	<body>
