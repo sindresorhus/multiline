@@ -4,7 +4,7 @@
 
 No more string concatenation or array join!
 
-*Note that ES6 will have [template string](http://www.2ality.com/2011/09/quasi-literals.html) which can be multiline, but time...*
+*Use ES2015 [template literals](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/template_strings) instead whenever possible.*
 
 #### Before
 
