@@ -1,9 +1,10 @@
+/* eslint-env mocha */
 'use strict';
-var assert = require('assert');
-var ml = require('./experiment');
+const assert = require('assert');
+const ml = require('./experiment');
 
-it('should support multiline comment directly as argument', function () {
-	var actual = ml(/*
+it('should support multiline comment directly as argument', () => {
+	const actual = ml(/*
 <!doctype html>
 <html>
 	<body>
@@ -11,6 +12,6 @@ it('should support multiline comment directly as argument', function () {
 	</body>
 </html>
 	*/);
-	var expected = '\n<!doctype html>\n<html>\n\t<body>\n\t\t<h1>Hello world!</h1>\n\t</body>\n</html>\n\t'
+	const expected = '\n<!doctype html>\n<html>\n\t<body>\n\t\t<h1>Hello world!</h1>\n\t</body>\n</html>\n\t';
 	assert.equal(actual, expected);
 });

@@ -1,9 +1,11 @@
+/* eslint-env mocha */
+/* eslint-disable no-multiple-lines */
 'use strict';
-var assert = require('assert');
-var ml = require('./');
+const assert = require('assert');
+const ml = require('.');
 
-it('should support multiline comments', function () {
-	var actual = ml(function(){/*
+it('should support multiline comments', () => {
+	const actual = ml(() => {/*
 <!doctype html>
 <html>
 	<body>
@@ -11,69 +13,69 @@ it('should support multiline comments', function () {
 	</body>
 </html>
 	*/});
-	var expected = '<!doctype html>\n<html>\n\t<body>\n\t\t<h1>Hello world!</h1>\n\t</body>\n</html>';
+	const expected = '<!doctype html>\n<html>\n\t<body>\n\t\t<h1>Hello world!</h1>\n\t</body>\n</html>';
 	assert.equal(actual, expected);
 });
 
-it('should match when comment starts with `/*!`', function () {
-	var actual = ml(function(){/*!
+it('should match when comment starts with `/*!`', () => {
+	const actual = ml(() => {/*!
 foo
 	*/});
-	var expected = 'foo';
+	const expected = 'foo';
 	assert.equal(actual, expected);
 });
 
-it('should match when comment starts with `/*@preserve`', function () {
-	var actual = ml(function(){/*@preserve
+it('should match when comment starts with `/*@preserve`', () => {
+	const actual = ml(() => {/*@preserve
 foo
 	*/});
-	var expected = 'foo';
+	const expected = 'foo';
 	assert.equal(actual, expected);
 });
 
-it('should match when comment starts with `/*!@preserve`', function () {
-	var actual = ml(function(){/*!@preserve
+it('should match when comment starts with `/*!@preserve`', () => {
+	const actual = ml(() => {/*!@preserve
 foo
 	*/});
-	var expected = 'foo';
+	const expected = 'foo';
 	assert.equal(actual, expected);
 });
 
-it('should preserve leading empty lines', function () {
-	var actual = ml(function(){/*
+it('should preserve leading empty lines', () => {
+	const actual = ml(() => {/*
 
 
 foo
 	*/});
-	var expected = '\n\nfoo';
+	const expected = '\n\nfoo';
 	assert.equal(actual, expected);
 });
 
-it('should preserve trailing empty lines', function () {
-	var actual = ml(function(){/*
+it('should preserve trailing empty lines', () => {
+	const actual = ml(() => {/*
 foo
 
 
 	*/});
-	var expected = 'foo\n\n';
+	const expected = 'foo\n\n';
 	assert.equal(actual, expected);
 });
 
-it('should throw if it can\'t match comment contents', function () {
-	assert.throws(function () {
-		ml(function(){});
+it('should throw if it can\'t match comment contents', () => {
+	assert.throws(() => {
+		ml(() => {});
 	});
 
-	assert.throws(function () {
-		ml(function(){/**/});
+	assert.throws(() => {
+		ml(() => {/**/});
 	});
 });
 
-it('should be preserved when using Uglify', function () {
-	var uglify = require('uglify-js');
-	var fixture = 'var str=multiline(function(){/*!@preserve\n<!doctype html>\n*/\nconsole.log});';
+it('should be preserved when using Uglify', () => {
+	const uglify = require('uglify-js');
+	const fixture = 'const str=multiline(function(){/*!@preserve\n<!doctype html>\n*/\nconsole.log});';
 
-	var actual = uglify.minify(fixture, {
+	const actual = uglify.minify(fixture, {
 		fromString: true,
 		output: {
 			comments: true
@@ -83,9 +85,9 @@ it('should be preserved when using Uglify', function () {
 	assert.equal(actual, fixture);
 });
 
-describe('multiline.stripIndent()', function () {
-	it('should strip redundant leading whitespace', function () {
-		var actual = ml.stripIndent(function(){/*
+describe('multiline.stripIndent()', () => {
+	it('should strip redundant leading whitespace', () => {
+		const actual = ml.stripIndent(() => {/*
 			<!doctype html>
 			<html>
 
@@ -94,27 +96,27 @@ describe('multiline.stripIndent()', function () {
 				</body>
 			</html>
 		*/});
-		var expected = '<!doctype html>\n<html>\n\n\t<body>\n\t\t<h1>Hello world!</h1>\n\t</body>\n</html>';
+		const expected = '<!doctype html>\n<html>\n\n\t<body>\n\t\t<h1>Hello world!</h1>\n\t</body>\n</html>';
 		assert.equal(actual, expected);
 	});
 
-	it('should preserve leading empty lines', function () {
-		var actual = ml.stripIndent(function(){/*
+	it('should preserve leading empty lines', () => {
+		const actual = ml.stripIndent(() => {/*
 
 
 			foo
 		*/});
-		var expected = '\n\nfoo';
+		const expected = '\n\nfoo';
 		assert.equal(actual, expected);
 	});
 
-	it('should preserve trailing empty lines', function () {
-		var actual = ml.stripIndent(function(){/*
+	it('should preserve trailing empty lines', () => {
+		const actual = ml.stripIndent(() => {/*
 			foo
 
 
 		*/});
-		var expected = 'foo\n\n';
+		const expected = 'foo\n\n';
 		assert.equal(actual, expected);
 	});
 });

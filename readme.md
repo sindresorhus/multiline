@@ -22,7 +22,7 @@ const str = '' +
 #### After
 
 ```js
-const str = multiline(function(){/*
+const str = multiline(()=>{/*
 <!doctype html>
 <html>
 	<body>
@@ -43,7 +43,7 @@ Even though it's [slower than string concat](http://jsperf.com/multiline), that 
 ## Install
 
 ```
-$ npm install --save multiline
+$ npm install multiline
 ```
 
 
@@ -52,7 +52,7 @@ $ npm install --save multiline
 Everything after the first newline and before the last will be returned as seen below:
 
 ```js
-const str = multiline(function(){/*
+const str = multiline(()=>{/*
 <!doctype html>
 <html>
 	<body>
@@ -78,7 +78,7 @@ Which outputs:
 You can use `multiline.stripIndent()` to be able to indent your multiline string without preserving the redundant leading whitespace.
 
 ```js
-	const str = multiline.stripIndent(function(){/*
+	const str = multiline.stripIndent(()=>{/*
 			<!doctype html>
 			<html>
 				<body>
@@ -107,7 +107,7 @@ Which outputs:
 ```js
 const str = 'unicorns';
 
-console.log(multiline(function(){/*
+console.log(multiline(()=>{/*
   I love %s
 */}), str);
 
@@ -173,17 +173,11 @@ const str = 'foo\n' +
 
 While it does work fine in the browser, it's mainly intended for use in Node.js. Use at your own risk.
 
-### Install
-
 ```
-$ npm install --save multiline
+$ npm install multiline
 ```
 
-*(with [Browserify](http://browserify.org))*
-
-```
-$ bower install --save multiline
-```
+With Webpack, Browserify, or something similar.
 
 
 ### Compatibility
